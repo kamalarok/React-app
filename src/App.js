@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React  from 'react';
+import { test } from './Hello';
+import Hello from './Hello';
+
+
+
+
+
+
+
+const PrintName = (Props) =>{
+  return <div className={Props.className} onClick={Props.onClick}>i am {Props.name}</div> 
+} 
+const clicked = ()=>{
+  alert("clicked")
+}
+
+const app = React.createElement('div', {className:"test" , onClick:(clicked)} , 'Hi', <PrintName onClick={clicked} name={'Kamalarok'} className={'test1'}/>)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>WelCome My React App{app} {test} {Hello}</div>
   );
 }
 
